@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+:root {
+  --primary-color: #12425b;
+  --dark-color: #38686a;
+  --light-color: #cdc6ae;
+  --lose-color: #a3b4a2;
+  --win-color: #187795;
+}
+
+/* Reset all browsers defaults to be the same as ours */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  text-align: center;
+}
+.restart-btn {
+  display: none;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0  5px 8px rgba(0, 0, 0, 0.6), 0  7px 20px rgba(0, 0, 0, 0.17);
+}
+
+.restart-btn:hover {
+  background: var(--primary-color);
+  color: var(--lose-color);
+  box-shadow: 0  5px 8px rgba(0, 0, 0, 0.2), 0  7px 20px rgba(0, 0, 0, 0.17);
+}
+
+.header {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.header h1 {
+  margin-bottom: 1rem;
+}
+
+.score {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.2rem;
+  color: var(--light-color);
+}
+
+/* using sudo selector to choose the first child p of the class score */
+.score p:first-child {
+  background: var(--dark-color);
+}
+
+/* using sudo selector to choose the last child p of the class score */
+.score p:last-child {
+  background: var(--win-color);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--win-color);
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice:hover {
+  color: var(--light-color);
+}
+
+.text-win {
+  color: var(--win-color);
+}
+.text-lose {
+  color: var(--lose-color);
+}
+@media (max-width: 700px) {
+  .choice {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 500px) {
+  .choice {
+    font-size: 80px;
+  }
+}
